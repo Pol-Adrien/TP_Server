@@ -11,7 +11,7 @@ public class JDBCConfiguration {
 	@Bean
 	public static Connection connexion() {
 		try {
-			return DriverManager.getConnection("jdbc:h2:tcp://localhost/~/test", "sa", "");
+			return DriverManager.getConnection("jdbc:h2:tcp://localhost/~/test", "poladrien", "root");
 
 		} catch (SQLException e) {
 			e.printStackTrace();
