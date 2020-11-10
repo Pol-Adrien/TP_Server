@@ -18,9 +18,9 @@ public class VilleDAOImpl implements VilleDAO {
 	public ArrayList<Ville> findAllVilles() {
 		ArrayList<Ville> listeVille = new ArrayList<>();
 		Connection conn = JDBCConfiguration.connexion();
-		try {
-			Statement stm = conn.createStatement();
-			ResultSet rset = stm.executeQuery("SELECT * FROM ville_france");
+		String query = "SELECT * FROM ville_france";
+		try (Statement stm = conn.createStatement();
+			 ResultSet rset = stm.executeQuery(query)) {
 			while (rset.next()) {
 				Ville ville = new Ville();
 				ville.setCodeCommune(rset.getString(1));
