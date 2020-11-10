@@ -7,15 +7,13 @@ import java.sql.SQLException;
 import org.springframework.context.annotation.Bean;
 
 public class JDBCConfiguration {
-	
+
 	@Bean
-	public Connection connexion() {
+	public static Connection connexion() {
 		try {
-			Connection conn = DriverManager.getConnection("jdbc:h2:tcp://localhost/~/test", "sa", "");
-			return conn;
-			
+			return DriverManager.getConnection("jdbc:h2:tcp://localhost/~/test", "sa", "");
+
 		} catch (SQLException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 		return null;

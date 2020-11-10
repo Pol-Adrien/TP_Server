@@ -15,6 +15,8 @@ public class Ville {
 	public String nomCommune;
 	public String codePostal;
 	public String libelleAcheminement;
-	public String ligne;
+	public String ligne5;
+	public String latitude;
+	public String longitude;
 
 }

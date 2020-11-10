@@ -10,17 +10,16 @@ import com.dto.Ville;
 
 @Service
 public class VilleBLOImpl implements VilleBLO {
-	
+
 	@Autowired
 	private VilleDAO villeDAO;
 
 	public ArrayList<Ville> getInfoVille() {
 		ArrayList<Ville> listeVille = null;
 
-		// TODO DAO
 		listeVille = villeDAO.findAllVilles();
 
 		return listeVille;
-	};
+	}
 
 }

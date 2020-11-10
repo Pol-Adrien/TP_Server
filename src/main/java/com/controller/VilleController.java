@@ -13,16 +13,15 @@ import com.dto.Ville;
 
 @RestController
 public class VilleController {
-	
+
 	@Autowired
 	VilleBLO villeService;
-	
+
 	@RequestMapping(value = "/ville", method = RequestMethod.GET)
 	@ResponseBody
 	public ArrayList<Ville> appelGet() {
 		System.out.println("Appel Get");
-		// TODO BLO
 		return villeService.getInfoVille();
 	}
-	
+
 }
