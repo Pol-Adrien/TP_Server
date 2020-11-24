@@ -18,14 +18,14 @@ public class VilleController {
 	@Autowired
 	VilleBLO villeService;
 
-	@RequestMapping(value = "/ville", method = RequestMethod.GET)
+	@RequestMapping(value = "/get", method = RequestMethod.GET)
 	@ResponseBody
 	public ArrayList<Ville> appelGet(@RequestParam(required = false) String departement) {
 		System.out.println("Appel GET");
 		return villeService.getInfoVille(departement);
 	}
 	
-	@RequestMapping(value = "/ville", method = RequestMethod.POST)
+	@RequestMapping(value = "/post", method = RequestMethod.POST)
 	@ResponseBody
 	public void appelPost(@RequestParam String codeCommune,
 						  @RequestParam String nomCommune, 
@@ -46,7 +46,7 @@ public class VilleController {
 		villeService.ajouterVille(ville);
 	}
 	
-	@RequestMapping(value = "/ville", method = RequestMethod.PUT)
+	@RequestMapping(value = "/put", method = RequestMethod.PUT)
 	@ResponseBody
 	public void appelPut(@RequestParam String codeCommune,
 					  	 @RequestParam String nomCommune, 
@@ -67,7 +67,7 @@ public class VilleController {
 		villeService.modifierVille(ville);
 	}
 
-	@RequestMapping(value = "/ville", method = RequestMethod.DELETE)
+	@RequestMapping(value = "/delete", method = RequestMethod.DELETE)
 	@ResponseBody
 	public void appelDelete(@RequestParam String codeCommune) {
 		System.out.println("Appel DELETE");
