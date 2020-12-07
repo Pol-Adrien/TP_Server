@@ -15,12 +15,12 @@ public class VilleBLOImpl implements VilleBLO {
 	private VilleDAO villeDAO;
 
 	@Override
-	public ArrayList<Ville> getInfoVille(String filtre) {
+	public ArrayList<Ville> getInfoVille(String codeCommune) {
 		ArrayList<Ville> listeVille = null;
-		if (filtre == null) {
+		if (codeCommune == null) {
 			listeVille = villeDAO.findAllVilles();
 		} else {
-			listeVille = villeDAO.findVilles(filtre);
+			listeVille = villeDAO.findVille(codeCommune);
 		}
 		return listeVille;
 	}

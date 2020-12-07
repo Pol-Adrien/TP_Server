@@ -42,10 +42,10 @@ public class VilleDAOImpl implements VilleDAO {
 	}
 
 	@Override
-	public ArrayList<Ville> findVilles(String filtre) {
+	public ArrayList<Ville> findVille(String codeCommune) {
 		ArrayList<Ville> listeVille = new ArrayList<>();
 		Connection conn = JDBCConfiguration.connexion();
-		String query = "SELECT * FROM ville_france WHERE code_postal LIKE '" + filtre + "%'";
+		String query = "SELECT * FROM ville_france WHERE code_commune_insee LIKE '" + codeCommune + "%'";
 		try (Statement stm = conn.createStatement();
 			 ResultSet rset = stm.executeQuery(query)) {
 			while (rset.next()) {

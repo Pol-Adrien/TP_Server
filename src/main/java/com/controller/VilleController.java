@@ -20,9 +20,9 @@ public class VilleController {
 
 	@RequestMapping(value = "/get", method = RequestMethod.GET)
 	@ResponseBody
-	public ArrayList<Ville> appelGet(@RequestParam(required = false) String departement) {
+	public ArrayList<Ville> appelGet(@RequestParam(required = false) String codeCommune) {
 		System.out.println("Appel GET");
-		return villeService.getInfoVille(departement);
+		return villeService.getInfoVille(codeCommune);
 	}
 	
 	@RequestMapping(value = "/post", method = RequestMethod.POST)
